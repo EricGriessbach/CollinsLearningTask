@@ -151,6 +151,97 @@
             display: none;
         }
 
+        .block-setup {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .block-setup.active {
+            display: block;
+        }
+
+        .block-setup h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .block-setup p {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .set-size-options {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .set-size-btn {
+            width: 100px;
+            height: 100px;
+            border: 3px solid #667eea;
+            background: white;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .set-size-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+            background: #f8f9fa;
+        }
+
+        .set-size-btn.selected {
+            background: #667eea;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .set-size-number {
+            font-size: 36px;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .set-size-btn.selected .set-size-number {
+            color: white;
+        }
+
+        .set-size-label {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .set-size-btn.selected .set-size-label {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .difficulty-hint {
+            margin-top: 10px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #666;
+            min-height: 60px;
+        }
+
+        .difficulty-hint strong {
+            color: #667eea;
+        }
+
         .trial-area {
             min-height: 400px;
             display: flex;
@@ -331,6 +422,165 @@
         .citation strong {
             color: #333;
         }
+
+        .config-screen {
+            display: none;
+        }
+
+        .config-screen.active {
+            display: block;
+        }
+
+        .config-screen h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .config-explanation {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .block-config {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+
+        .block-config:hover {
+            border-color: #667eea;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+        }
+
+        .block-config-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .block-config-title {
+            font-weight: bold;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .set-size-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .set-size-label {
+            font-size: 14px;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .set-size-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .set-size-btn {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #667eea;
+            background: white;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #667eea;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .set-size-btn:hover {
+            background: #f0f0ff;
+            transform: translateY(-2px);
+        }
+
+        .set-size-btn.selected {
+            background: #667eea;
+            color: white;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+        }
+
+        .config-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .reset-btn {
+            padding: 12px 30px;
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .reset-btn:hover {
+            background: #f0f0ff;
+        }
+
+        .add-remove-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .add-block-btn, .remove-block-btn {
+            padding: 10px 20px;
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 20px;
+            color: #667eea;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .add-block-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .remove-block-btn {
+            border-color: #dc3545;
+            color: #dc3545;
+        }
+
+        .remove-block-btn:hover {
+            background: #dc3545;
+            color: white;
+        }
+
+        .remove-block-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .remove-block-btn:disabled:hover {
+            background: white;
+            color: #dc3545;
+        }
     </style>
 </head>
 <body>
@@ -358,6 +608,30 @@
             </div>
 
             <button class="start-btn" onclick="startExperiment()">Start Experiment</button>
+        </div>
+
+        <!-- Configuration Screen -->
+        <div id="config-screen" class="config-screen">
+            <h2>Configure Experiment Blocks</h2>
+            
+            <div class="config-explanation">
+                <strong>Customize your experiment:</strong> Choose how many symbols (stimuli) to learn in each block. 
+                The task manipulates working memory load by varying set size from 2 (easy) to 6 (challenging) symbols.
+            </div>
+
+            <div class="add-remove-buttons">
+                <button class="add-block-btn" onclick="addBlock()">➕ Add Block</button>
+                <button class="remove-block-btn" onclick="removeBlock()">➖ Remove Block</button>
+            </div>
+
+            <div id="block-configs">
+                <!-- Block configurations will be generated here -->
+            </div>
+
+            <div class="config-actions">
+                <button class="reset-btn" onclick="showInstructions()">← Back</button>
+                <button class="start-btn" onclick="confirmConfiguration()">Start Experiment →</button>
+            </div>
         </div>
 
         <!-- Game Area -->

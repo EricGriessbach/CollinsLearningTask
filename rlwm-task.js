@@ -36,9 +36,73 @@ let state = {
 // Initialize the experiment
 window.startExperiment = function() {
     document.getElementById('instructions').style.display = 'none';
+    document.getElementById('config-screen').classList.add('active');
+    
+    // Generate configuration UI
+    generateConfigUI();
+}
+
+// Generate the configuration UI
+function generateConfigUI() {
+    const container = document.getElementById('block-configs');
+    container.innerHTML = '';
+    
+    config.setSizes.forEach((setSize, index) => {
+        const blockConfig = document.createElement('div');
+        blockConfig.className = 'block-config';
+        blockConfig.innerHTML = `
+            <div class="block-config-header">
+                <div class="block-config-title">Block ${index + 1}</div>
+                <div class="set-size-controls">
+                    <div class="set-size-label">Number of Symbols:</div>
+                    <div class="set-size-buttons">
+                        ${[2, 3, 4, 5, 6].map(size => `
+                            <button class="set-size-btn ${size === setSize ? 'selected' : ''}" 
+                                    onclick="updateSetSize(${index}, ${size})">
+                                ${size}
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            </div>
+        `;
+        container.appendChild(blockConfig);
+    });
+}
+
+// Update set size for a specific block
+window.updateSetSize = function(blockIndex, newSize) {
+    config.setSizes[blockIndex] = newSize;
+    generateConfigUI();
+}
+
+// Add a new block
+window.addBlock = function() {
+    // Add a new block with default size of 3
+    config.setSizes.push(3);
+    generateConfigUI();
+}
+
+// Remove the last block
+window.removeBlock = function() {
+    if (config.setSizes.length > 1) {
+        config.setSizes.pop();
+        generateConfigUI();
+    }
+}
+
+// Go back to instructions
+window.showInstructions = function() {
+    document.getElementById('config-screen').classList.remove('active');
+    document.getElementById('instructions').style.display = 'block';
+}
+
+// Confirm configuration and start experiment
+window.confirmConfiguration = function() {
+    document.getElementById('config-screen').classList.remove('active');
     document.getElementById('game-area').classList.add('active');
     
-    // Generate all blocks
+    // Generate all blocks with the configured set sizes
     generateBlocks();
     
     // Start first block
